@@ -4,6 +4,7 @@ namespace App\Events;
 
 use App\Events\Event;
 use App\Models\User;
+use App\Models\Annotation;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
@@ -19,9 +20,9 @@ class FeedbackSeen extends Event
      *
      * @return void
      */
-    public function __construct($feedback, User $user)
+    public function __construct(Annotation $feedback, User $user)
     {
-        $this->feedback = $feedback; // either an Annotation or Comment
+        $this->feedback = $feedback;
         $this->user = $user;
     }
 
@@ -42,7 +43,7 @@ class FeedbackSeen extends Event
 
     public static function getDescription()
     {
-        return 'When feedback (an annotation or comment) of yours is seen by the document sponsor';
+        return 'When feedback (a note or comment) of yours is seen by a document sponsor';
     }
 
     public static function getType()

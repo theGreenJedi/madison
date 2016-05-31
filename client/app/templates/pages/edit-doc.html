@@ -235,7 +235,7 @@
     <section id="tab-comments" class="tab-pane">
       <div>
         <a class="download download-csv" target="_blank"
-          href="/api/docs/{{ doc.id }}/actions?download=csv"
+          href="/api/docs/{{ doc.id }}/comments?all=true&exclude_sponsors=true&download=csv"
           translate="document.comments.download.csv"></a>
       </div>
     </section>
@@ -262,7 +262,7 @@
             <td>{{ stats.comments.total }}</td>
           </tr>
           <tr>
-            <td translate="document.stats.annotations"></td>
+            <td translate="document.stats.notes"></td>
             <td>{{ stats.annotations.day }}</td>
             <td>{{ stats.annotations.week }}</td>
             <td>{{ stats.annotations.month }}</td>
